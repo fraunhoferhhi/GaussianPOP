@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Compression of 3D Gaussian Splatting with Optimized Feature Planes and Standard Video Codecs</title>
+  <title>GaussianPOP: Principled Simplification Framework for Compact 3D Gaussian Splatting via Error Quantification</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -44,6 +44,8 @@
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
   <script src="./static/js/script.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/mathjax.js"></script>
 </head>
 <body>
 
@@ -53,30 +55,27 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Compression of 3D Gaussian Splatting with Optimized Feature Planes and Standard Video Codecs</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a href="https://www.hhi.fraunhofer.de/en/departments/vca/research-groups/multimedia-communications/team/soonbin-lee.html" target="_blank">Soonbin Lee</a>,</span>
-                <span class="author-block">
-                  <a href="https://www.hhi.fraunhofer.de/en/departments/vca/research-groups/multimedia-communications/team/fangwen-shu.html" target="_blank">Fangwen Shu</a>,</span>
-                  <span class="author-block">
-                    <a href="https://www.hhi.fraunhofer.de/en/departments/vca/research-groups/multimedia-communications/team/yago-sanchez-de-la-fuente.html" target="_blank">Yago Sanchez de la Fuente</a>,</span>
-              <span class="author-block">
-                                    <a href="https://www.hhi.fraunhofer.de/en/departments/vca/people-and-contact/thomas-schierl.html" target="_blank">Thomas Schierl</a>,</span>
-              <span class="author-block">
-                    <a href="https://www.hhi.fraunhofer.de/en/departments/vca/research-groups/multimedia-communications/team/cornelius-hellge.html" target="_blank">Cornelius Hellge</a>
-                  </span>
-                  </div>
+            <h1 class="title is-1 publication-title">GaussianPOP: Principled Simplification Framework for Compact 3D Gaussian Splatting via Error Quantification</h1>
+            <div class="is-size-5 publication-authors" style="line-height: 1.8;">
+              <span class="author-block">Soonbin Lee<sup>1</sup>,</span>
+              <span class="author-block">Yeong-Gyu Kim<sup>2</sup>,</span>
+              <span class="author-block">Simon Sasse<sup>1</sup>,</span>
+              <span class="author-block">Tomás M. Borges<sup>1</sup>,</span>
+              <span class="author-block">Yago Sánchez<sup>1</sup></span>
+              <br>
+              <span class="author-block">Eun-Seok Ryu<sup>2</sup>,</span>
+              <span class="author-block">Thomas Schierl<sup>1</sup>,</span>
+              <span class="author-block">Cornelius Hellge<sup>1</sup></span>
+            </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Fraunhofer Heinrich Hertz Institute, HHI</span>
-                  </div>
-
+            <div class="is-size-5 publication-authors" style="margin-top: 10px;">
+              <span class="author-block"><sup>1</sup>Fraunhofer Heinrich-Hertz-Institute (HHI), Germany</span><br>
+              <span class="author-block"><sup>2</sup>Sungkyunkwan University (SKKU), South Korea</span>
+            </div>
                   <div class="column has-text-centered">
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2501.03399" target="_blank"
+                  <a href="https://arxiv.org/abs/XXXX" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -86,7 +85,7 @@
               </span>
                 <!-- Github link -->
               <span class="link-block">
-                <a href="https://github.com/fraunhoferhhi/CodecGS/" target="_blank"
+                <a href="https://github.com/fraunhoferhhi/GaussianPOP/" target="_blank"
                 class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
                   <i class="fab fa-github"></i>
@@ -109,7 +108,7 @@
     <div class="hero-body">
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/proposed_fix.png" alt="MY ALT TEXT"/>
+        <img src="static/images/Figure1.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
         </h2>
       </div>
@@ -126,7 +125,7 @@
         <h2 class="title is-3">TL;DR</h2>
         <div class="content has-text-justified">
           <p>
-            We propose a compact 3D Gaussian Splatting (3DGS) scene representation based on a <b>grid-based feature plane model</b> that incorporates <b>(1) frequency-domain entropy modeling</b> and <b>(2) channel importance bit allocation with a progressive training scheme</b>. The feature plane is compressed using a standard video codec (e.g., HEVC), enabling high compression rates with low complexity.
+            We present GaussianPOP, a new simplification framework based on analytical Gaussian error quantification. Our key contribution is a error criterion, derived directly from the 3DGS rendering equation, that precisely measures each Gaussian's contribution to the rendered image. The framework is both accurate and flexible, supporting <strong>(1) on-training pruning</strong> as well as <strong>(2) post-training simplification</strong> via iterative error re-quantification for improved stability.
           </p>
         </div>
       </div>
@@ -134,17 +133,14 @@
   </div>
 </section>
 <!-- End paper abstract -->
-
-
-<!-- Teaser video-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <div class="item has-text-centered">  <!-- Added has-text-centered -->
-        <!-- Your image here -->
-        <img src="static/images/proposed2.png" alt="MY ALT TEXT" style="width: 450px;"/>
-        <p>
-          Visualization of the first channel in the XY plane (a) with L1 loss and (b) with proposed DCT entropy loss.</br>Our experimental results show that DCT entropy loss improves rate-distortion performance with standard video codecs.
+      <div class="item has-text-centered">
+        <img src="static/images/Figure2.png" alt="Comparative analysis of pruning methods" style="width: 850px; height: auto;"/>
+        
+        <p class="is-size-6 has-text-justified has-text-grey-dark" style="max-width: 850px; margin: 1.5em auto 0; line-height: 1.6;">
+          The figure compares our method against state-of-the-art approaches in two key scenarios. The <strong>(1) on-training</strong> scenario integrates pruning into the training process from scratch, whereas the <strong>(2) post-training</strong> scenario applies simplification to a pre-trained model.
         </p>
       </div>
     </div>
@@ -160,12 +156,15 @@
         <div class="content has-text-justified">
           <p>
             <ol>
-            <li> <b>Feature Plane Representation:</b> Rather than storing all primitive attributes explicitly in 3DGS, we use feature planes to predict them. We employ progressive training that limits backpropagation at each channel level, which enhances training stability.
+            <li>
+              <b>Rendering Error Formulation:</b> 
+              We derive an analytical error criterion directly from the 3DGS rendering equation to precisely quantify each Gaussian's visual contribution to the rendered image. Unlike heuristic importance scores, this metric provides a direct measure of the visual error induced by removing a specific primitive.
             </li>
-            <li> <b>Entropy Loss for Video Codec:</b> Standard video codec is non-differentiable, so we directly optimize the block-wise DCT coefficient of feature plane by entropy modeling. By introducing this loss, the bitstream size of the feature plane is significantly reduced without requiring any codec software modifications.
+
+            <li>
+              <b>Versatile Pruning Score:</b> 
+              GaussianPOP consistently outperforms state-of-the-art importance-based methods (LightGaussian, MiniSplatting) in both on-training and post-training scenarios. By accurately identifying visually redundant information, it achieves a superior trade-off between model compactness and high rendering quality across diverse datasets.
             </li>
-          <li><b>Channel Importance-based Bit Allocation:</b> Based on progressive training, we calculate importance with different channel levels and incorporate them into the optimization loss. The proposed bit allocation method improves compression efficiency.
-          </li>
             </ol>
           </p>
         </div>
@@ -176,157 +175,111 @@
 <!-- End paper abstract -->
 
 
-<!-- Teaser video-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/result.png" alt="MY ALT TEXT"/>
-        <p>
-          Quantitative results for the compression of 3DGS. We conducted experiments using the Mip-NeRF360, DeepBlending, and Tank & Temples datasets. The results are highlighted in red, orange and yellow, respectively.
+      <div class="columns is-centered">
+        <div class="column">
+          <img src="static/images/Figure3-a.png" alt="Error distribution plot A" style="width: 100%; height: auto;"/>
+        </div>
+        <div class="column">
+          <img src="static/images/Figure3-b.png" alt="Error distribution plot B" style="width: 100%; height: auto;"/>
+        </div>
+      </div>
+      
+      <div class="item has-text-centered">
+        <p class="has-text-justified" style="max-width: 850px; margin: 1.0em auto 0;">
+          <strong>Post-training pruning results</strong> starting from pre-trained models, evaluated against various importance scores.
+          The plots illustrate the PSNR vs. pruning ratio for our method both <strong>w/o fine-tuning (post-prune)</strong> and <strong>with fine-tuning (5000 iter)</strong>. 
+          The results validate that our error quantification maintains significantly higher fidelity even without retraining, highlighting its inherent accuracy in identifying visually redundant Gaussians.
         </p>
       </div>
     </div>
   </div>
 </section>
-<!-- End teaser video -->
 
-
-
-
-    <section class="section">
-    <div class="container ">
-      <div class=" has-text-centered">
-        <h2 class="title is-3">Visual Comparisons</h2>
-        <div class="content has-text-justified">
-          <p>
-
-          </p>
-        </div>
-        <div class="columns is-centered">
-          <!-- Visual Effects. -->
-          <div class="column">
-            <div class="content">
-              <div class="columns is-centered">
-                <div class="column is-full-width">
-                  <div id="example1" class="bal-container-small">
-
-                    <div class="bal-after">
-                      <img src="./static/images/ours_garden.png">
-                      <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                        Ours, 15.2MB
-                      </div>
-                    </div>
-
-                    <div class="bal-before" style="width:96.4968152866242%;">
-                      <div class="bal-before-inset" style="width: 539px;">
-                        <img src="./static/images/compact_garden.png">
-                        <div class="bal-beforePosition beforeLabel">
-                          Compact3DGS (CVPR24), 43.2MB
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="bal-handle" style="left:96.4968152866242%;">
-                      <span class=" handle-left-arrow"></span>
-                      <span class="handle-right-arrow"></span>
-                    </div>
-
-                  </div>
-
-
-                  <div id="example2" class="bal-container-small">
-
-                    <div class="bal-after">
-                      <img src="./static/images/ours_kitchen.png">
-                      <div class="bal-afterPosition afterLabel">
-                        Ours, 7.7MB
-                      </div>
-                    </div>
-
-                    <div class="bal-before" style="width: 50%;">
-                      <div class="bal-before-inset" style="width: 539px;">
-                        <img src="./static/images/compact_kitchen.png">
-                        <div class="bal-beforePosition beforeLabel">
-                          Compact3DGS (CVPR24), 24.6MB
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="bal-handle" style="left: 50%;">
-                      <span class=" handle-left-arrow"></span>
-                      <span class="handle-right-arrow"></span>
-                    </div>
-
-                  </div>
+<section class="section">
+  <div class="container">
+    <div class="has-text-centered">
+      <h2 class="title is-3">Visual Comparisons</h2>
+      
+      <div class="columns is-centered">
+        <div class="column is-6">
+          <div class="content">
+            <div id="example1" class="bal-container-small" style="margin-bottom: 30px;">
+              <div class="bal-after">
+                <img src="./static/images/On_drjohnson_ours.png" style="width:100%;">
+                <div class="bal-afterPosition afterLabel" style="z-index:1;">Ours, 0.19M</div>
+              </div>
+              <div class="bal-before">
+                <div class="bal-before-inset">
+                  <img src="./static/images/On_drjohnson_3DGS.png" style="width:100%;">
+                  <div class="bal-beforePosition beforeLabel">3DGS, 3.26M</div>
                 </div>
               </div>
+              <div class="bal-handle"><span class="handle-left-arrow"></span><span class="handle-right-arrow"></span></div>
             </div>
+
+            <div id="example2" class="bal-container-small" style="margin-bottom: 20px;">
+              <div class="bal-after">
+                <img src="./static/images/On_stump_ours.png" style="width:100%;">
+                <div class="bal-afterPosition afterLabel" style="z-index:1;">Ours, 0.39M</div>
+              </div>
+              <div class="bal-before">
+                <div class="bal-before-inset">
+                  <img src="./static/images/On_stump_3DGS.png" style="width:100%;">
+                  <div class="bal-beforePosition beforeLabel">3DGS, 4.42M</div>
+                </div>
+              </div>
+              <div class="bal-handle"><span class="handle-left-arrow"></span><span class="handle-right-arrow"></span></div>
+            </div>
+
+            <p class="is-size-7 has-text-justified">
+              <strong>On-training pruning results</strong> starting from scratch with our pruning metrics (Total 40k iterations). 
+              The visual comparisons show that our method maintains significantly higher fidelity even at extreme pruning ratios.
+            </p>
           </div>
+        </div>
 
-
-          <!--/ Visual Effects. -->
-
-          <!-- Matting. -->
-          <div class="column">
-            <div class="columns is-centered">
-              <div class="column content">
-
-                <div id="example4" class="bal-container-small">
-                  <div class="bal-after">
-                    <img src="./static/images/ours_play.png">
-                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                      Ours, 7.9MB
-                    </div>
-                  </div>
-
-                  <div class="bal-before" style="width:62.10191082802548%;">
-                    <div class="bal-before-inset" style="width: 539px;">
-                      <img src="./static/images/compgs_play.png">
-                      <div class="bal-beforePosition beforeLabel">
-                        CompGS (MM24), 8.9MB
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="bal-handle" style="left:62.10191082802548%;">
-                    <span class=" handle-left-arrow"></span>
-                    <span class="handle-right-arrow"></span>
-                  </div>
-
-                </div>
-
-                <div id="example5" class="bal-container-small">
-                  <div class="bal-after">
-                    <img src="./static/images/ours_truck.png">
-                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                      Ours, 8.8MB
-                    </div>
-                  </div>
-
-                  <div class="bal-before" style="width:56.77179962894249%;">
-                    <div class="bal-before-inset" style="width: 628px;">
-                      <img src="./static/images/compgs_truck.png">
-                      <div class="bal-beforePosition beforeLabel">
-                        CompGS (MM24), 10.1MB
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="bal-handle" style="left:56.77179962894249%;">
-                    <span class=" handle-left-arrow"></span>
-                    <span class="handle-right-arrow"></span>
-                  </div>
-
+        <div class="column is-6">
+          <div class="content">
+            <div id="example4" class="bal-container-small" style="margin-bottom: 30px;">
+              <div class="bal-after">
+                <img src="./static/images/Post_counter_ours.png" style="width:100%;">
+                <div class="bal-afterPosition afterLabel" style="z-index:1;">Ours, 80% Pruned+FT</div>
+              </div>
+              <div class="bal-before">
+                <div class="bal-before-inset">
+                  <img src="./static/images/Post_counter_Light.png" style="width:100%;">
+                  <div class="bal-beforePosition beforeLabel">LightGS, 80% Pruned+FT</div>
                 </div>
               </div>
+              <div class="bal-handle"><span class="handle-left-arrow"></span><span class="handle-right-arrow"></span></div>
             </div>
+
+            <div id="example5" class="bal-container-small" style="margin-bottom: 20px;">
+              <div class="bal-after">
+                <img src="./static/images/Post_playroom_ours.png" style="width:100%;">
+                <div class="bal-afterPosition afterLabel" style="z-index:1;">Ours, 80% Pruned+FT</div>
+              </div>
+              <div class="bal-before">
+                <div class="bal-before-inset">
+                  <img src="./static/images/Post_playroom_Light.png" style="width:100%;">
+                  <div class="bal-beforePosition beforeLabel">LightGS, 80% Pruned+FT</div>
+                </div>
+              </div>
+              <div class="bal-handle"><span class="handle-left-arrow"></span><span class="handle-right-arrow"></span></div>
+            </div>
+
+            <p class="is-size-7 has-text-justified">
+              <strong>Post-training pruning results</strong> starting from pre-trained ply to reuse existing models, evaluated against LightGS (Total 5k fine-tuning iterations).
+            </p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <script>
     new BeforeAfter({
@@ -349,15 +302,7 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@misc{lee2025compression3dgaussiansplatting,
-      title={Compression of 3D Gaussian Splatting with Optimized Feature Planes and Standard Video Codecs}, 
-      author={Soonbin Lee and Fangwen Shu and Yago Sanchez and Thomas Schierl and Cornelius Hellge},
-      year={2025},
-      eprint={2501.03399},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2501.03399}, 
-}</code></pre>
+      <pre><code>TBD</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
